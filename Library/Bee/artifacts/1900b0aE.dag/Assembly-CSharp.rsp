@@ -367,6 +367,7 @@
 "Assets/Scripts/LanceController.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/ShieldController.cs"
+"Assets/Scripts/StartGame.cs"
 -langversion:9.0
 /deterministic
 /optimize+
