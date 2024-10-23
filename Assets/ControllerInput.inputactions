@@ -1,0 +1,54 @@
+{
+    "name": "ControllerInput",
+    "maps": [
+        {
+            "name": "Controller",
+            "id": "ee2208d9-b2cd-4b37-952e-970ddbb6af58",
+            "actions": [
+                {
+                    "name": "LeftStickShield",
+                    "type": "Value",
+                    "id": "c0bdcde7-2569-4701-9f81-de855f9fbc62",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RightStickLance",
+                    "type": "Value",
+                    "id": "f6973d97-d5aa-4dfc-9242-c9ca1f582bbc",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ad7ad93b-3c13-4d89-9787-3f3b98054ae9",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftStickShield",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "556f0b40-5f67-4bfc-b5cc-dea8fbb1b72b",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightStickLance",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
