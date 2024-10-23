@@ -2,20 +2,24 @@ using UnityEngine;
 
 public class LanceController : MonoBehaviour
 {
-    public Transform spearTip; // Assign the spear's tip Transform in the Inspector
-    public Transform lowerArm; // Assign the lower arm Transform in the Inspector
-    public float speed = 1f; // Adjust this for how fast you want the spear to move
+    public Transform lanceTip; // Assign the tip of the lance in the Inspector
+    public Transform lowerArm;  // Assign the lower arm's transform
 
-    public void MoveLance(Vector2 input)
+    private void Update()
     {
-        // Calculate the new position for the spear's tip based on input
-        Vector3 newTipPosition = spearTip.position + new Vector3(input.x, 0, input.y) * speed * Time.deltaTime;
+        // Optional: Update lance position if needed
+    }
 
-        // Set the new position of the spear's tip
-        spearTip.position = newTipPosition;
+    public void MoveLance(Vector2 lanceInput)
+    {
+        // Make sure the lanceTip is assigned and move it based on input
+        if (lanceTip != null)
+        {
+            // Calculate new position based on input
+            Vector3 newPosition = lanceTip.position + new Vector3(lanceInput.x, lanceInput.y, 0f); // Adjust if necessary
+            lanceTip.position = newPosition;
 
-        // Optional: Rotate the lower arm to face the spear tip
-        Vector3 direction = (spearTip.position - lowerArm.position).normalized;
-        lowerArm.rotation = Quaternion.LookRotation(direction);
+            // Optionally, you can rotate or adjust the lance here
+        }
     }
 }

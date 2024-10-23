@@ -363,6 +363,7 @@
 "Assets/Scripts/ControllerInput.cs"
 "Assets/Scripts/FollowPlayer1.cs"
 "Assets/Scripts/FollowPlayer2.cs"
+"Assets/Scripts/InputManager.cs"
 "Assets/Scripts/LanceController.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/ShieldController.cs"

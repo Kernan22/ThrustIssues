@@ -152,10 +152,6 @@ MonoBehaviour:
   - {fileID: 1665984773}
   - {fileID: 1889166974}
   - {fileID: 705447969}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 296316084}
   - {fileID: 1623726860}
   ragdollColliders: []
@@ -786,7 +782,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 589e4f4734af4e24daa19ff380adefd5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1997981660}
+      addedObject: {fileID: 1997981663}
   m_SourcePrefab: {fileID: 100100000, guid: 589e4f4734af4e24daa19ff380adefd5, type: 3}
 --- !u!4 &980448432 stripped
 Transform:
@@ -913,6 +909,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 20f899e18f6466548959164910715150, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1439635073}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 20f899e18f6466548959164910715150, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1439635074}
   m_SourcePrefab: {fileID: 100100000, guid: 20f899e18f6466548959164910715150, type: 3}
 --- !u!4 &1439635072 stripped
 Transform:
@@ -933,6 +932,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shieldTransform: {fileID: 701015809}
   moveSpeed: 0.1
+--- !u!114 &1439635074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637930958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d814e08c91449e14bb8c63d4ef7b14e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldTransform: {fileID: 1439635072}
+  moveSpeed: 5
 --- !u!1001 &1520682736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1042,6 +1055,52 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 54482941989254292, guid: 76da8f8abceb8874ea82058391a69b8a, type: 3}
   m_PrefabInstance: {fileID: 1520682736}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1624279065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1624279067}
+  - component: {fileID: 1624279066}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1624279066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624279065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1552d49d9069f744d9f791659227bf1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldController: {fileID: 1439635073}
+  lanceController: {fileID: 1997981663}
+--- !u!4 &1624279067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624279065}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.144651, y: 7.7475605, z: -8.082928}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1665984773 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 54379231743358222, guid: 76da8f8abceb8874ea82058391a69b8a, type: 3}
@@ -1218,7 +1277,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 589e4f4734af4e24daa19ff380adefd5, type: 3}
   m_PrefabInstance: {fileID: 980448431}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1997981660
+--- !u!114 &1997981663
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1227,12 +1286,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1997981657}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7458538bde8a20469b66ae3d2d652aa, type: 3}
+  m_Script: {fileID: 11500000, guid: 9601d88cf99896342a2e7c74a940dc88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spearTip: {fileID: 0}
-  lowerArm: {fileID: 0}
-  speed: 1
+  lanceTip: {fileID: 980448432}
+  lowerArm: {fileID: 1303113758}
 --- !u!4 &2093379048 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7317731328111405690, guid: 5f0963a629b97442587b7f3ece766e42, type: 3}
@@ -1476,3 +1534,4 @@ SceneRoots:
   - {fileID: 1385500138}
   - {fileID: 1898755314}
   - {fileID: 488007607}
+  - {fileID: 1624279067}
