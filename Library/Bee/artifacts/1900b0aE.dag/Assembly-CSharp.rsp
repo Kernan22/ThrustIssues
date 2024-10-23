@@ -361,6 +361,7 @@
 "Assets/FreeAssets/LPHorse_Version_2_9/Version_2_9/Saddle/Scripts/SaddleBind.cs"
 "Assets/Scripts/Control Ragdoll.cs"
 "Assets/Scripts/ControllerInput.cs"
+"Assets/Scripts/CountdownManager.cs"
 "Assets/Scripts/FollowPlayer1.cs"
 "Assets/Scripts/FollowPlayer2.cs"
 "Assets/Scripts/InputManager.cs"

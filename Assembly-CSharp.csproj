@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ShieldController.cs" />
+    <Compile Include="Assets\Scripts\CountdownManager.cs" />
     <Compile Include="Assets\FreeAssets\LPHorse_Version_2_9\Version_2_9\ReactiveRider\Scripts\ReactiveRider.cs" />
     <Compile Include="Assets\FreeAssets\LPHorse_Version_2_9\Version_2_9\Saddle\Scripts\SaddleBind.cs" />
     <Compile Include="Assets\Scripts\LanceController.cs" />
