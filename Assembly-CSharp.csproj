@@ -45,20 +45,21 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\ShieldController.cs" />
-    <Compile Include="Assets\Scripts\CountdownManager.cs" />
     <Compile Include="Assets\FreeAssets\LPHorse_Version_2_9\Version_2_9\ReactiveRider\Scripts\ReactiveRider.cs" />
+    <Compile Include="Assets\Scripts\UI Scripts\StartGame.cs" />
     <Compile Include="Assets\FreeAssets\LPHorse_Version_2_9\Version_2_9\Saddle\Scripts\SaddleBind.cs" />
-    <Compile Include="Assets\Scripts\LanceController.cs" />
     <Compile Include="Assets\FreeAssets\LPHorse_Version_2_9\Version_2_9\ReactiveRider\Scripts\OnAnimatorIKRelay.cs" />
-    <Compile Include="Assets\Scripts\ControllerInput.cs" />
-    <Compile Include="Assets\Scripts\FollowPlayer2.cs" />
-    <Compile Include="Assets\Scripts\FollowPlayer1.cs" />
-    <Compile Include="Assets\Scripts\InputManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\UpperArmController.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\InputManager.cs" />
     <Compile Include="Assets\FreeAssets\LPHorse_Version_2_9\Version_2_9\ReactiveRider\Scripts\RRSetIK.cs" />
-    <Compile Include="Assets\Scripts\StartGame.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Control Ragdoll.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\FollowPlayer2.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\LanceController.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\Control Ragdoll.cs" />
+    <Compile Include="Assets\Scripts\UI Scripts\CountdownManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\ShieldController.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\ControllerInput.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\FollowPlayer1.cs" />
     <None Include="Assets\FreeAssets\LPHorse_Version_2_9\Version_2_31\READ_ME.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
