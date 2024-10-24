@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // Add this line for InputAction
+using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour, ControllerInput.IControllerActions
 {

@@ -1,25 +1,32 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class LanceController : MonoBehaviour
 {
-    public Transform lanceTip; // Assign the tip of the lance in the Inspector
-    public Transform lowerArm;  // Assign the lower arm's transform
+    public Transform lowerRightArm;  // Assign this to the lower right arm of the knight in the Inspector
+    public float rotationSpeed = 100f;
+    public float maxVerticalAngle = 45f;
+    public float maxHorizontalAngle = 45f;
 
-    private void Update()
+    private float currentHorizontalAngle = 0f;
+    private float currentVerticalAngle = 0f;
+
+    // This method will handle arm movement based on player input
+    public void MoveLance(Vector2 input)
     {
-        // Optional: Update lance position if needed
-    }
+        // Separate the input into horizontal and vertical components
+        float horizontalInput = input.x;
+        float verticalInput = input.y;
 
-    public void MoveLance(Vector2 lanceInput)
-    {
-        // Make sure the lanceTip is assigned and move it based on input
-        if (lanceTip != null)
-        {
-            // Calculate new position based on input
-            Vector3 newPosition = lanceTip.position + new Vector3(lanceInput.x, lanceInput.y, 0f); // Adjust if necessary
-            lanceTip.position = newPosition;
+        // Update the angles
+        currentHorizontalAngle += horizontalInput * rotationSpeed * Time.deltaTime;
+        currentVerticalAngle += verticalInput * rotationSpeed * Time.deltaTime;
 
-            // Optionally, you can rotate or adjust the lance here
-        }
+        // Clamp the angles to prevent unnatural movement
+        currentHorizontalAngle = Mathf.Clamp(currentHorizontalAngle, -maxHorizontalAngle, maxHorizontalAngle);
+        currentVerticalAngle = Mathf.Clamp(currentVerticalAngle, -maxVerticalAngle, maxVerticalAngle);
+
+        // Apply the rotation to the lower right arm
+        lowerRightArm.localRotation = Quaternion.Euler(currentVerticalAngle, currentHorizontalAngle, 0);
     }
 }
