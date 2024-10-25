@@ -4,36 +4,39 @@ public class UpperArmController : MonoBehaviour
 {
     public Transform upperRightArm;  // Assign the upper right arm Transform in the Inspector
     public float rotationSpeed = 100f;  // Speed of rotation
-    private float targetYRotation = 0f;  // The target Y-axis rotation
+    public float maxRotation = 90f;  // Max forward rotation (90 degrees)
+    public float minRotation = -90f;  // Max backward rotation (-90 degrees)
+
     private float currentYRotation = 0f;  // The current Y-axis rotation
-    private float maxRotation = 90f;  // Max forward rotation (90 degrees)
-    private float minRotation = -90f;  // Max backward rotation (-90 degrees)
+    private float rotationInput = 0f;  // Holds the input value for rotation
 
     private void Update()
     {
-        // Smoothly rotate towards the target rotation along the Y-axis
-        currentYRotation = Mathf.Lerp(currentYRotation, targetYRotation, rotationSpeed * Time.deltaTime);
+        // Gradually rotate the arm based on the rotationInput value (-1 for backward, 1 for forward)
+        currentYRotation += rotationInput * rotationSpeed * Time.deltaTime;
+
+        // Clamp the Y-axis rotation to the defined limits
+        currentYRotation = Mathf.Clamp(currentYRotation, minRotation, maxRotation);
 
         // Apply the rotation only to the Y-axis
         upperRightArm.localRotation = Quaternion.Euler(0, currentYRotation, 0);
     }
 
-    // Rotate the arm forward (R1)
+    // Method to set input when rotating forward (R1 pressed)
     public void RotateForward()
     {
-        targetYRotation = maxRotation;  // Set target to max forward rotation (90 degrees)
+        rotationInput = 1f;  // Set input to rotate forward
     }
 
-    // Rotate the arm backward (R2)
+    // Method to set input when rotating backward (R2 pressed)
     public void RotateBackward()
     {
-        targetYRotation = minRotation;  // Set target to max backward rotation (-90 degrees)
+        rotationInput = -1f;  // Set input to rotate backward
     }
 
-    // Stop rotation (when R1 or R2 is released)
+    // Stop rotation when neither R1 nor R2 is pressed
     public void StopRotation()
     {
-        // Optionally set to neutral (0 degrees) or keep the current position
-        // targetYRotation = 0f;  // Uncomment this line to return to neutral position if desired
+        rotationInput = 0f;  // Stop rotating
     }
 }

@@ -39,29 +39,29 @@ public class InputManager : MonoBehaviour, ControllerInput.IControllerActions
         lanceController.MoveLance(lanceInput);  // Pass input to LanceController
     }
 
-    // Handle R1 button (upper arm forward rotation)
+    // Handle R1 button (start rotating backward)
     public void OnR1(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            upperArmController.RotateForward();  // Rotate forward when R1 is pressed
+            upperArmController.RotateBackward();  // Start rotating backward when R1 is pressed
         }
         else if (context.canceled)
         {
-            upperArmController.StopRotation();  // Stop rotation when R1 is released
+            upperArmController.StopRotation();  // Stop rotating when R1 is released
         }
     }
 
-    // Handle R2 button (upper arm backward rotation)
+    // Handle R2 button (start rotating forward)
     public void OnR2(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            upperArmController.RotateBackward();  // Rotate backward when R2 is pressed
+            upperArmController.RotateForward();  // Start rotating forward when R2 is pressed
         }
         else if (context.canceled)
         {
-            upperArmController.StopRotation();  // Stop rotation when R2 is released
+            upperArmController.StopRotation();  // Stop rotating when R2 is released
         }
     }
 }
