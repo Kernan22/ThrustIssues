@@ -1828,6 +1828,7 @@ MonoBehaviour:
   rotationSpeed: 100
   maxRotation: 90
   minRotation: -90
+  stopDelay: 0.1
 --- !u!1 &854684347 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6982001176921246591, guid: e26158161034d2844a344e598b0e7ec5, type: 3}
@@ -1972,7 +1973,7 @@ MonoBehaviour:
     m_ActionId: cbb39896-8afd-4902-84df-58c42a092839
     m_ActionName: Controller/R2[/DualSenseGamepadHID/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Player1
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Controller
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -3471,8 +3472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aac69601569ce2d4cb4757023de3d491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1Input: {fileID: 854684351}
-  player2Input: {fileID: 1869645834}
+  playerInput: {fileID: 0}
 --- !u!114 &1624279070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4383,7 +4383,7 @@ MonoBehaviour:
     m_ActionId: cbb39896-8afd-4902-84df-58c42a092839
     m_ActionName: Controller/R2[/DualSenseGamepadHID/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Player2
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Controller
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -4731,7 +4731,7 @@ MonoBehaviour:
   - {fileID: 78680802}
   - {fileID: 1950882994}
   - {fileID: 1265616561}
-  - {fileID: 0}
+  - {fileID: 2097980762}
   - {fileID: 42586658}
   ragdollColliders: []
 --- !u!4 &2093379048 stripped
@@ -7835,6 +7835,7 @@ MonoBehaviour:
   rotationSpeed: 100
   maxRotation: 90
   minRotation: -90
+  stopDelay: 0.1
 --- !u!144 &144251860809548086
 CharacterJoint:
   m_ObjectHideFlags: 0

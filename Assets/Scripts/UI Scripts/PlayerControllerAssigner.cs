@@ -3,24 +3,29 @@ using UnityEngine.InputSystem;
 
 public class PlayerControllerAssigner : MonoBehaviour
 {
-    public PlayerInput player1Input;
-    public PlayerInput player2Input;
+    public PlayerInput playerInput;  // Reference to PlayerInput component
 
-    void Start()
+    private void Start()
     {
-        // Ensure we have at least 2 controllers connected
-        if (Gamepad.all.Count < 2)
+        // Make sure PlayerInput component is assigned
+        if (playerInput == null)
         {
-            Debug.LogError("Not enough controllers connected!");
-            return;
+            playerInput = GetComponent<PlayerInput>();
         }
 
-        // Assign the detected gamepads to the players
-        // Assuming DualSense (PS5 controller) is Player 1 and Switch Pro Controller is Player 2
-        player1Input.SwitchCurrentControlScheme("Player1", Gamepad.all[0]);
-        player2Input.SwitchCurrentControlScheme("Player2", Gamepad.all[1]);
+        // Switch to a specific control scheme if necessary
+        if (playerInput != null)
+        {
+            SwitchControlScheme("Gamepad");  // Replace "Gamepad" with the control scheme name you want to use
+        }
+    }
 
-        Debug.Log("Player 1 assigned to: " + Gamepad.all[0].name);
-        Debug.Log("Player 2 assigned to: " + Gamepad.all[1].name);
+    private void SwitchControlScheme(string controlScheme)
+    {
+        // Get all connected devices of the specified control scheme type
+        var devices = InputSystem.devices;
+
+        // Switch the control scheme using the current devices
+        playerInput.SwitchCurrentControlScheme(controlScheme, devices.ToArray());
     }
 }
