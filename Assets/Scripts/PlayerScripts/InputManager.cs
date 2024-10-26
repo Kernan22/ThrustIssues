@@ -3,8 +3,8 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour, ControllerInput.IControllerActions
 {
-    public ShieldController shieldController;
-    public LanceController lanceController;
+    public ShieldController shieldController;  // Reference to the ShieldController script
+    public LanceController lanceController;    // Reference to the LanceController script
     public UpperArmController upperArmController;  // Reference to UpperArmController
 
     private ControllerInput inputActions;
@@ -63,5 +63,12 @@ public class InputManager : MonoBehaviour, ControllerInput.IControllerActions
         {
             upperArmController.StopRotation();  // Stop rotating when R2 is released
         }
+    }
+
+    // Implement the missing OnShieldMove method
+    public void OnShieldMove(InputAction.CallbackContext context)
+    {
+        Vector2 shieldInput = context.ReadValue<Vector2>();
+        shieldController.MoveShield(shieldInput);  // Pass the input to the ShieldController to move the shield
     }
 }

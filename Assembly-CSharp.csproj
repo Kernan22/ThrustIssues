@@ -54,6 +54,7 @@
     <Compile Include="Assets\FreeAssets\LPHorse_Version_2_9\Version_2_9\ReactiveRider\Scripts\RRSetIK.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\FollowPlayer2.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\LanceController.cs" />
+    <Compile Include="Assets\Scripts\UI Scripts\PlayerControllerAssigner.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Control Ragdoll.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\CountdownManager.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\ShieldController.cs" />

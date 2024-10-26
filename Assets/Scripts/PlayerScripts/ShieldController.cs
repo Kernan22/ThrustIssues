@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ShieldController : MonoBehaviour
 {
@@ -15,18 +16,38 @@ public class ShieldController : MonoBehaviour
     public float minVerticalOffset = -1f;   // Minimum vertical movement range
 
     private Vector3 initialOffset; // Store the original position relative to the knight's arm
+    private Vector2 shieldInput;   // Store shield input values
 
-    private void Start()
+    private InputAction shieldMoveAction; // Store reference to ShieldMove action
+
+    private void Awake()
     {
-        // Store the initial offset from the knight arm in world space
-        initialOffset = transform.position - knightArm.position;
+        // Get the PlayerInput component from the parent knight (which has both shield and arm)
+        PlayerInput playerInput = GetComponentInParent<PlayerInput>();
+
+        // Get the ShieldMove action from the InputActionAsset
+        shieldMoveAction = playerInput.actions["ShieldMove"];
+
+        // Subscribe to the "ShieldMove" action for shield input
+        shieldMoveAction.performed += OnShieldMove;
+        shieldMoveAction.canceled += OnShieldMove; // Stop movement when input is canceled
     }
 
-    private void Update()
+    private void OnDestroy()
     {
-        // Get input for shield movement
-        Vector2 shieldInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        // Unsubscribe from the shield move action when the object is destroyed
+        shieldMoveAction.performed -= OnShieldMove;
+        shieldMoveAction.canceled -= OnShieldMove;
+    }
 
+    public void OnShieldMove(InputAction.CallbackContext context)
+    {
+        // Get the shield input value from the controller
+        shieldInput = context.ReadValue<Vector2>();
+    }
+
+    public void Update()
+    {
         if (shieldInput.magnitude > inputDeadZone)
         {
             // Move shield based on input
@@ -51,7 +72,7 @@ public class ShieldController : MonoBehaviour
         targetPosition.x = Mathf.Clamp(targetPosition.x, knightArm.position.x + minHorizontalOffset, knightArm.position.x + maxHorizontalOffset);
         targetPosition.y = Mathf.Clamp(targetPosition.y, knightArm.position.y + minVerticalOffset, knightArm.position.y + maxVerticalOffset);
 
-        // Directly move the transform (no Rigidbody)
+        // Move the shield to the clamped position
         transform.position = targetPosition;
 
         // Optionally, align the shield's rotation with the knight's arm
@@ -65,4 +86,3 @@ public class ShieldController : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, targetPosition, returnSpeed * Time.deltaTime);
     }
 }
-

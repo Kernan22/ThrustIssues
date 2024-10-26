@@ -6,7 +6,7 @@
             "id": "ee2208d9-b2cd-4b37-952e-970ddbb6af58",
             "actions": [
                 {
-                    "name": "LeftStickShield",
+                    "name": "ShieldMove",
                     "type": "Value",
                     "id": "c0bdcde7-2569-4701-9f81-de855f9fbc62",
                     "expectedControlType": "Vector2",
@@ -49,8 +49,19 @@
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "LeftStickShield",
+                    "groups": ";Player1",
+                    "action": "ShieldMove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "357a4f7d-9fe7-48bc-bddd-a535f6f34c1e",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Player2",
+                    "action": "ShieldMove",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -60,7 +71,18 @@
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Player1",
+                    "action": "RightStickLance",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "477233fe-b966-4a84-bc80-3adfedcd3b0b",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Player2",
                     "action": "RightStickLance",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -71,7 +93,18 @@
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Player1",
+                    "action": "R1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "10bb9e71-752b-4363-8c68-af65d2d8b928",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Player2",
                     "action": "R1",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -82,7 +115,18 @@
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Player1",
+                    "action": "R2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "649c9c22-e987-4bd7-b01e-1162ba0e909a",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Player2",
                     "action": "R2",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -90,5 +134,28 @@
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "Player1",
+            "bindingGroup": "Player1",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Player2",
+            "bindingGroup": "Player2",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }

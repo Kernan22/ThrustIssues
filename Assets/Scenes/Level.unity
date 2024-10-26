@@ -356,7 +356,6 @@ MonoBehaviour:
   - {fileID: 54255889301352990}
   - {fileID: 54843226345946312}
   - {fileID: 54392161976307402}
-  - {fileID: 0}
   ragdollColliders: []
 --- !u!114 &179486328
 MonoBehaviour:
@@ -587,6 +586,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6982001176921246591, guid: e26158161034d2844a344e598b0e7ec5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 854684348}
+    - targetCorrespondingSourceObject: {fileID: 6982001176921246591, guid: e26158161034d2844a344e598b0e7ec5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 854684351}
   m_SourcePrefab: {fileID: 100100000, guid: e26158161034d2844a344e598b0e7ec5, type: 3}
 --- !u!1 &296252365
 GameObject:
@@ -620,7 +622,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.4440012, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.2500001, z: 1.2500001}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 515427075}
@@ -637,7 +639,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0.5, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 5.315001, z: 0}
+  m_ConnectedAnchor: {x: 0.00002670288, y: 5.3149896, z: -0.0000047683716}
   serializedVersion: 2
   m_Spring: 10
   m_Damper: 0.2
@@ -662,7 +664,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: -0.6, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.6453351, z: 0}
+  m_ConnectedAnchor: {x: 0.000009710138, y: 0.6453198, z: -0.0000047683716}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -993,6 +995,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6982001176921246591, guid: e26158161034d2844a344e598b0e7ec5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1869645831}
+    - targetCorrespondingSourceObject: {fileID: 6982001176921246591, guid: e26158161034d2844a344e598b0e7ec5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1869645834}
   m_SourcePrefab: {fileID: 100100000, guid: e26158161034d2844a344e598b0e7ec5, type: 3}
 --- !u!1 &515427074
 GameObject:
@@ -1686,7 +1691,7 @@ CharacterJoint:
   m_Anchor: {x: -0.6, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.5272727, y: -0.3999999, z: 0}
+  m_ConnectedAnchor: {x: 0.52726465, y: -0.40000877, z: -0.0000047683716}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -1877,6 +1882,100 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4055107359915827708, guid: e26158161034d2844a344e598b0e7ec5, type: 3}
   m_PrefabInstance: {fileID: 275043377}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &854684351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854684347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: cebbd1697ba89124d872a0ea713a68b3, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1694503105}
+        m_TargetAssemblyTypeName: ShieldController, Assembly-CSharp
+        m_MethodName: OnShieldMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c0bdcde7-2569-4701-9f81-de855f9fbc62
+    m_ActionName: Controller/LeftStickShield[/DualSenseGamepadHID/leftStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LanceController, Assembly-CSharp
+        m_MethodName: OnMovePerformed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f6973d97-d5aa-4dfc-9242-c9ca1f582bbc
+    m_ActionName: Controller/RightStickLance[/DualSenseGamepadHID/rightStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 827877767}
+        m_TargetAssemblyTypeName: UpperArmController, Assembly-CSharp
+        m_MethodName: RotateBackward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 40fa0abb-0464-40b3-b9cf-b35f5f481ba8
+    m_ActionName: Controller/R1[/DualSenseGamepadHID/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 827877767}
+        m_TargetAssemblyTypeName: UpperArmController, Assembly-CSharp
+        m_MethodName: RotateForward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cbb39896-8afd-4902-84df-58c42a092839
+    m_ActionName: Controller/R2[/DualSenseGamepadHID/rightTrigger]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Player1
+  m_DefaultActionMap: Controller
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &916427022
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,6 +2210,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 589e4f4734af4e24daa19ff380adefd5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1997981666}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 589e4f4734af4e24daa19ff380adefd5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1997981669}
   m_SourcePrefab: {fileID: 100100000, guid: 589e4f4734af4e24daa19ff380adefd5, type: 3}
 --- !u!4 &980448432 stripped
 Transform:
@@ -2257,7 +2359,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: -0.5, z: 0.15}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.77099943, z: 0.15}
+  m_ConnectedAnchor: {x: 0.00002670288, y: 0.77101374, z: 0.14998913}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:
@@ -2520,7 +2622,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.49999997, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -1.5700073, y: 9.1150055, z: 186.065}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 2
@@ -2622,7 +2724,7 @@ CharacterJoint:
   m_Anchor: {x: 0.6, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.5272727, y: -0.3999999, z: 0}
+  m_ConnectedAnchor: {x: -0.90908116, y: -0.40000877, z: -1.0499926}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -3038,7 +3140,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.5, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -2.2, y: -1.8039999, z: 0.65}
+  m_ConnectedAnchor: {x: -2.1999855, y: -1.8039985, z: 0.6499891}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:
@@ -3211,7 +3313,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.5, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 2.12, y: -1.8039999, z: 0.65}
+  m_ConnectedAnchor: {x: 2.1200218, y: -1.8039985, z: 0.6499891}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:
@@ -3333,8 +3435,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1624279067}
-  - component: {fileID: 1624279066}
-  - component: {fileID: 1624279068}
+  - component: {fileID: 1624279069}
+  - component: {fileID: 1624279070}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: Untagged
@@ -3342,21 +3444,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1624279066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624279065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1552d49d9069f744d9f791659227bf1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shieldController: {fileID: 144848000842664059}
-  lanceController: {fileID: 144251860809548089}
-  upperArmController: {fileID: 144150817233689764}
 --- !u!4 &1624279067
 Transform:
   m_ObjectHideFlags: 0
@@ -3372,7 +3459,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1624279068
+--- !u!114 &1624279069
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3381,12 +3468,55 @@ MonoBehaviour:
   m_GameObject: {fileID: 1624279065}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1552d49d9069f744d9f791659227bf1b, type: 3}
+  m_Script: {fileID: 11500000, guid: aac69601569ce2d4cb4757023de3d491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldController: {fileID: 1694503105}
-  lanceController: {fileID: 1637133566}
-  upperArmController: {fileID: 827877767}
+  player1Input: {fileID: 854684351}
+  player2Input: {fileID: 1869645834}
+--- !u!114 &1624279070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624279065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NotificationBehavior: 0
+  m_MaxPlayerCount: 2
+  m_AllowJoining: 1
+  m_JoinBehavior: 0
+  m_PlayerJoinedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_PlayerLeftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_JoinAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 04de3457-aab2-46e8-a864-33e18f429b69
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_PlayerPrefab: {fileID: 8290048601178492221, guid: 0eee0e01fc5425745b61a8649b1d4ea8, type: 3}
+  m_SplitScreen: 0
+  m_MaintainAspectRatioInSplitScreen: 0
+  m_FixedNumberOfSplitScreens: -1
+  m_SplitScreenRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1 &1637133559
 GameObject:
   m_ObjectHideFlags: 0
@@ -3401,7 +3531,6 @@ GameObject:
   - component: {fileID: 1637133563}
   - component: {fileID: 1637133562}
   - component: {fileID: 1637133561}
-  - component: {fileID: 1637133566}
   m_Layer: 0
   m_Name: RightLowerArm
   m_TagString: Untagged
@@ -3437,7 +3566,7 @@ CharacterJoint:
   m_Anchor: {x: -0.5, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.57142854, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.5714438, y: -0.000009536742, z: -0.000006811959}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -3569,22 +3698,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637133559}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1637133566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637133559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9601d88cf99896342a2e7c74a940dc88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lowerRightArm: {fileID: 1637133560}
-  rotationSpeed: 100
-  maxVerticalAngle: 45
-  maxHorizontalAngle: 45
 --- !u!1 &1649245326
 GameObject:
   m_ObjectHideFlags: 0
@@ -3698,7 +3811,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.49999997, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.8571428, y: 0.50000054, z: 0}
+  m_ConnectedAnchor: {x: -0.8571401, y: 0.49999917, z: 0.00003797667}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 2
@@ -3800,7 +3913,7 @@ CharacterJoint:
   m_Anchor: {x: 0.5, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.57142854, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.57142586, y: -0.000009536742, z: 0.00003797667}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -3969,6 +4082,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1733964281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733964273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9601d88cf99896342a2e7c74a940dc88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowerRightArm: {fileID: 1637133560}
+  rotationSpeed: 100
+  maxVerticalAngle: 45
+  maxHorizontalAngle: 45
+  deflectionAngle: 20
+  deflectionSpeed: 2
 --- !u!1 &1745583210
 GameObject:
   m_ObjectHideFlags: 0
@@ -4162,6 +4293,100 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4055107359915827708, guid: e26158161034d2844a344e598b0e7ec5, type: 3}
   m_PrefabInstance: {fileID: 488007607}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1869645834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869645829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: cebbd1697ba89124d872a0ea713a68b3, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 144848000842664059}
+        m_TargetAssemblyTypeName: ShieldController, Assembly-CSharp
+        m_MethodName: OnShieldMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c0bdcde7-2569-4701-9f81-de855f9fbc62
+    m_ActionName: Controller/LeftStickShield[/DualSenseGamepadHID/leftStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1997981669}
+        m_TargetAssemblyTypeName: LanceController, Assembly-CSharp
+        m_MethodName: OnMovePerformed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f6973d97-d5aa-4dfc-9242-c9ca1f582bbc
+    m_ActionName: Controller/RightStickLance[/DualSenseGamepadHID/rightStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 144150817233689764}
+        m_TargetAssemblyTypeName: UpperArmController, Assembly-CSharp
+        m_MethodName: RotateBackward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 40fa0abb-0464-40b3-b9cf-b35f5f481ba8
+    m_ActionName: Controller/R1[/DualSenseGamepadHID/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 144150817233689764}
+        m_TargetAssemblyTypeName: UpperArmController, Assembly-CSharp
+        m_MethodName: RotateForward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cbb39896-8afd-4902-84df-58c42a092839
+    m_ActionName: Controller/R2[/DualSenseGamepadHID/rightTrigger]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Player2
+  m_DefaultActionMap: Controller
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &1925975204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4233,6 +4458,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 589e4f4734af4e24daa19ff380adefd5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1733964278}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 589e4f4734af4e24daa19ff380adefd5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1733964281}
   m_SourcePrefab: {fileID: 100100000, guid: 589e4f4734af4e24daa19ff380adefd5, type: 3}
 --- !u!1 &1950882991
 GameObject:
@@ -4415,6 +4643,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1997981669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997981657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9601d88cf99896342a2e7c74a940dc88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowerRightArm: {fileID: 4456850466174846}
+  rotationSpeed: 100
+  maxVerticalAngle: 45
+  maxHorizontalAngle: 45
+  deflectionAngle: 20
+  deflectionSpeed: 2
 --- !u!1 &2068346570
 GameObject:
   m_ObjectHideFlags: 0
@@ -4487,7 +4733,6 @@ MonoBehaviour:
   - {fileID: 1265616561}
   - {fileID: 0}
   - {fileID: 42586658}
-  - {fileID: 0}
   ragdollColliders: []
 --- !u!4 &2093379048 stripped
 Transform:
@@ -4554,7 +4799,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: -0.5, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.5266668, z: 0}
+  m_ConnectedAnchor: {x: 0.00001335144, y: 0.5266719, z: -0.0000047683716}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:
@@ -5285,7 +5530,6 @@ GameObject:
   - component: {fileID: 54340773667533498}
   - component: {fileID: 144251860809548086}
   - component: {fileID: 144251860809548088}
-  - component: {fileID: 144251860809548089}
   m_Layer: 0
   m_Name: RightLowerArm
   m_TagString: Untagged
@@ -7739,22 +7983,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &144251860809548089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722163245862112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9601d88cf99896342a2e7c74a940dc88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lowerRightArm: {fileID: 4456850466174846}
-  rotationSpeed: 100
-  maxVerticalAngle: 45
-  maxHorizontalAngle: 45
 --- !u!144 &144368799166974236
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -8008,14 +8236,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knightArm: {fileID: 4068809636441682}
-  movementSpeed: 1
-  returnSpeed: 1
+  movementSpeed: 2
+  returnSpeed: 5
   inputDeadZone: 0.1
   offset: {x: 0, y: 0, z: 0}
-  maxHorizontalOffset: 0.1
-  minHorizontalOffset: -0.1
-  maxVerticalOffset: 0.1
-  minVerticalOffset: -0.1
+  maxHorizontalOffset: 1
+  minHorizontalOffset: -1
+  maxVerticalOffset: 1
+  minVerticalOffset: -1
 --- !u!145 &145602506738653666
 SpringJoint:
   m_ObjectHideFlags: 0

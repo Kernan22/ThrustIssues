@@ -369,6 +369,7 @@
 "Assets/Scripts/PlayerScripts/ShieldController.cs"
 "Assets/Scripts/PlayerScripts/UpperArmController.cs"
 "Assets/Scripts/UI Scripts/CountdownManager.cs"
+"Assets/Scripts/UI Scripts/PlayerControllerAssigner.cs"
 "Assets/Scripts/UI Scripts/StartGame.cs"
 -langversion:9.0
 /deterministic

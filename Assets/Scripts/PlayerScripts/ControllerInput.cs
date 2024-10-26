@@ -28,7 +28,7 @@ public partial class @ControllerInput: IInputActionCollection2, IDisposable
             ""id"": ""ee2208d9-b2cd-4b37-952e-970ddbb6af58"",
             ""actions"": [
                 {
-                    ""name"": ""LeftStickShield"",
+                    ""name"": ""ShieldMove"",
                     ""type"": ""Value"",
                     ""id"": ""c0bdcde7-2569-4701-9f81-de855f9fbc62"",
                     ""expectedControlType"": ""Vector2"",
@@ -71,8 +71,19 @@ public partial class @ControllerInput: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""LeftStickShield"",
+                    ""groups"": "";Player1"",
+                    ""action"": ""ShieldMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""357a4f7d-9fe7-48bc-bddd-a535f6f34c1e"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Player2"",
+                    ""action"": ""ShieldMove"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -82,7 +93,18 @@ public partial class @ControllerInput: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Player1"",
+                    ""action"": ""RightStickLance"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""477233fe-b966-4a84-bc80-3adfedcd3b0b"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Player2"",
                     ""action"": ""RightStickLance"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -93,7 +115,18 @@ public partial class @ControllerInput: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Player1"",
+                    ""action"": ""R1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""10bb9e71-752b-4363-8c68-af65d2d8b928"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Player2"",
                     ""action"": ""R1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -104,7 +137,18 @@ public partial class @ControllerInput: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Player1"",
+                    ""action"": ""R2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""649c9c22-e987-4bd7-b01e-1162ba0e909a"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Player2"",
                     ""action"": ""R2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -112,11 +156,34 @@ public partial class @ControllerInput: IInputActionCollection2, IDisposable
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""Player1"",
+            ""bindingGroup"": ""Player1"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Player2"",
+            ""bindingGroup"": ""Player2"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // Controller
         m_Controller = asset.FindActionMap("Controller", throwIfNotFound: true);
-        m_Controller_LeftStickShield = m_Controller.FindAction("LeftStickShield", throwIfNotFound: true);
+        m_Controller_ShieldMove = m_Controller.FindAction("ShieldMove", throwIfNotFound: true);
         m_Controller_RightStickLance = m_Controller.FindAction("RightStickLance", throwIfNotFound: true);
         m_Controller_R1 = m_Controller.FindAction("R1", throwIfNotFound: true);
         m_Controller_R2 = m_Controller.FindAction("R2", throwIfNotFound: true);
@@ -186,7 +253,7 @@ public partial class @ControllerInput: IInputActionCollection2, IDisposable
     // Controller
     private readonly InputActionMap m_Controller;
     private List<IControllerActions> m_ControllerActionsCallbackInterfaces = new List<IControllerActions>();
-    private readonly InputAction m_Controller_LeftStickShield;
+    private readonly InputAction m_Controller_ShieldMove;
     private readonly InputAction m_Controller_RightStickLance;
     private readonly InputAction m_Controller_R1;
     private readonly InputAction m_Controller_R2;
@@ -194,7 +261,7 @@ public partial class @ControllerInput: IInputActionCollection2, IDisposable
     {
         private @ControllerInput m_Wrapper;
         public ControllerActions(@ControllerInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @LeftStickShield => m_Wrapper.m_Controller_LeftStickShield;
+        public InputAction @ShieldMove => m_Wrapper.m_Controller_ShieldMove;
         public InputAction @RightStickLance => m_Wrapper.m_Controller_RightStickLance;
         public InputAction @R1 => m_Wrapper.m_Controller_R1;
         public InputAction @R2 => m_Wrapper.m_Controller_R2;
@@ -207,9 +274,9 @@ public partial class @ControllerInput: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_ControllerActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_ControllerActionsCallbackInterfaces.Add(instance);
-            @LeftStickShield.started += instance.OnLeftStickShield;
-            @LeftStickShield.performed += instance.OnLeftStickShield;
-            @LeftStickShield.canceled += instance.OnLeftStickShield;
+            @ShieldMove.started += instance.OnShieldMove;
+            @ShieldMove.performed += instance.OnShieldMove;
+            @ShieldMove.canceled += instance.OnShieldMove;
             @RightStickLance.started += instance.OnRightStickLance;
             @RightStickLance.performed += instance.OnRightStickLance;
             @RightStickLance.canceled += instance.OnRightStickLance;
@@ -223,9 +290,9 @@ public partial class @ControllerInput: IInputActionCollection2, IDisposable
 
         private void UnregisterCallbacks(IControllerActions instance)
         {
-            @LeftStickShield.started -= instance.OnLeftStickShield;
-            @LeftStickShield.performed -= instance.OnLeftStickShield;
-            @LeftStickShield.canceled -= instance.OnLeftStickShield;
+            @ShieldMove.started -= instance.OnShieldMove;
+            @ShieldMove.performed -= instance.OnShieldMove;
+            @ShieldMove.canceled -= instance.OnShieldMove;
             @RightStickLance.started -= instance.OnRightStickLance;
             @RightStickLance.performed -= instance.OnRightStickLance;
             @RightStickLance.canceled -= instance.OnRightStickLance;
@@ -252,9 +319,27 @@ public partial class @ControllerInput: IInputActionCollection2, IDisposable
         }
     }
     public ControllerActions @Controller => new ControllerActions(this);
+    private int m_Player1SchemeIndex = -1;
+    public InputControlScheme Player1Scheme
+    {
+        get
+        {
+            if (m_Player1SchemeIndex == -1) m_Player1SchemeIndex = asset.FindControlSchemeIndex("Player1");
+            return asset.controlSchemes[m_Player1SchemeIndex];
+        }
+    }
+    private int m_Player2SchemeIndex = -1;
+    public InputControlScheme Player2Scheme
+    {
+        get
+        {
+            if (m_Player2SchemeIndex == -1) m_Player2SchemeIndex = asset.FindControlSchemeIndex("Player2");
+            return asset.controlSchemes[m_Player2SchemeIndex];
+        }
+    }
     public interface IControllerActions
     {
-        void OnLeftStickShield(InputAction.CallbackContext context);
+        void OnShieldMove(InputAction.CallbackContext context);
         void OnRightStickLance(InputAction.CallbackContext context);
         void OnR1(InputAction.CallbackContext context);
         void OnR2(InputAction.CallbackContext context);
