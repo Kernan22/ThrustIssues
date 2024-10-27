@@ -19,14 +19,12 @@ public class LanceController : MonoBehaviour
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
-        // Subscribe to the "Move" action
         playerInput.actions["Move"].performed += OnMovePerformed;
-        playerInput.actions["Move"].canceled += OnMovePerformed; // Stop movement when canceled
+        playerInput.actions["Move"].canceled += OnMovePerformed;
     }
 
-    public void OnDestroy()
+    private void OnDestroy()
     {
-        // Unsubscribe when object is destroyed
         playerInput.actions["Move"].performed -= OnMovePerformed;
         playerInput.actions["Move"].canceled -= OnMovePerformed;
     }
@@ -37,33 +35,26 @@ public class LanceController : MonoBehaviour
         MoveLance(input);
     }
 
-    // This method will handle arm movement based on player input
     public void MoveLance(Vector2 input)
     {
-        // Only allow movement if the lance is not deflecting
         if (!isDeflecting)
         {
-            // Separate the input into horizontal and vertical components
             float horizontalInput = input.x;
             float verticalInput = input.y;
 
-            // Update the angles
             currentHorizontalAngle += horizontalInput * rotationSpeed * Time.deltaTime;
             currentVerticalAngle += verticalInput * rotationSpeed * Time.deltaTime;
 
-            // Clamp the angles to prevent unnatural movement
             currentHorizontalAngle = Mathf.Clamp(currentHorizontalAngle, -maxHorizontalAngle, maxHorizontalAngle);
             currentVerticalAngle = Mathf.Clamp(currentVerticalAngle, -maxVerticalAngle, maxVerticalAngle);
 
-            // Apply the rotation to the lower right arm
             lowerRightArm.localRotation = Quaternion.Euler(currentVerticalAngle, currentHorizontalAngle, 0);
         }
     }
 
-    // Call this method when the shield blocks the spear
     public void BlockedByShield()
     {
-        if (!isDeflecting)  // Ensure we only deflect once per collision
+        if (!isDeflecting)
         {
             isDeflecting = true;
             Debug.Log("Lance is deflected by shield!");
@@ -71,14 +62,11 @@ public class LanceController : MonoBehaviour
         }
     }
 
-    // Coroutine to handle the deflection effect
     public System.Collections.IEnumerator DeflectLance()
     {
-        // Apply a quick deflection angle
         float targetHorizontalAngle = currentHorizontalAngle + deflectionAngle;
         float targetVerticalAngle = currentVerticalAngle + deflectionAngle;
 
-        // Smoothly rotate towards the deflection angle
         while (Mathf.Abs(currentHorizontalAngle - targetHorizontalAngle) > 0.1f &&
                Mathf.Abs(currentVerticalAngle - targetVerticalAngle) > 0.1f)
         {
@@ -89,7 +77,28 @@ public class LanceController : MonoBehaviour
             yield return null;
         }
 
-        // Return to normal state after deflection
         isDeflecting = false;
+    }
+
+    // Detect collision with the opponent's head
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collision detected with: " + collision.gameObject.name); // Log the object we collided with
+
+        // Check if the collision is specifically with the head
+        if (collision.gameObject.CompareTag("Head"))
+        {
+            KnightController knightController = collision.transform.root.GetComponent<KnightController>();
+
+            if (knightController != null)
+            {
+                knightController.RagdollOnHit();
+                Debug.Log("Head hit detected! Ragdoll activated.");
+            }
+            else
+            {
+                Debug.LogWarning("KnightController not found on the root of the head object.");
+            }
+        }
     }
 }

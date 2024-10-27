@@ -8,11 +8,14 @@ public class KnightController : MonoBehaviour
 
     void Start()
     {
-        // keep the ragdoll parts inactive
+        // Automatically gather all Rigidbody and Collider components in child objects
+        ragdollRigidbodies = GetComponentsInChildren<Rigidbody>();
+        ragdollColliders = GetComponentsInChildren<Collider>();
+
+        // Keep the ragdoll parts inactive at the start
         SetRagdollState(false);
     }
 
-    
     public void SetRagdollState(bool state)
     {
         foreach (Rigidbody rb in ragdollRigidbodies)
@@ -28,7 +31,10 @@ public class KnightController : MonoBehaviour
         }
 
         // Enable/disable the Animator depending on the ragdoll state
-        animator.enabled = !state;
+        if (animator != null)
+        {
+            animator.enabled = !state;
+        }
     }
 
     // Call this function when the knight gets hit
